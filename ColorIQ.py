@@ -5,8 +5,8 @@ from sklearn.linear_model import LinearRegression
 data = pd.read_csv('colorsmp.csv')
 
 vectorizer = CountVectorizer()
-X_data = vectorizer.fit_transform(data['Color Name']).toarray()
-y_data = data[['R', 'G', 'B']].values
+X = vectorizer.fit_transform(data['Color Name']).toarray()
+y = data[['R', 'G', 'B']].values
 
 model = LinearRegression()
 model.fit(X, y)
